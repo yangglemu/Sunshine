@@ -10,9 +10,11 @@ import java.util.HashMap;
 public abstract class DataAdapter extends BaseAdapter {
     protected ArrayList<HashMap<String, String>> mData;
     protected LayoutInflater mInflater;
+    protected Context mContext;
 
     public DataAdapter(Context context) {
         mData = new ArrayList<>();
+        mContext = context;
         mInflater = LayoutInflater.from(context);
         initData();
     }

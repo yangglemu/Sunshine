@@ -1,9 +1,12 @@
 package com.soft.sunshine;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,14 +18,23 @@ public class GoodsAdapter extends DataAdapter {
 
     @Override
     protected void initData() {
-        for (int i = 1; i < 39; i++) {
+        SQLiteHelper helper = new SQLiteHelper(mContext);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select sj,sl,zq from goods", null);
+        int index = 0;
+        while (cursor.moveToNext()) {
             HashMap<String, String> map = new HashMap<>();
-            map.put("id", i + "");
-            map.put("sj", (i + 10) + ".00");
-            map.put("sl", "9");
-            map.put("zq", 1 + ".00");
+            map.put("id", ++index + "");
+            map.put("sj", cursor.getInt(0) + ".00");
+            map.put("sl", cursor.getInt(1) + "");
+            map.put("zq", cursor.getFloat(2)+".00");
             mData.add(map);
         }
+        if(index==0){
+            Toast.makeText(mContext,"Table goods has no data",Toast.LENGTH_SHORT).show();
+        }
+        cursor.close();
+        db.close();
     }
 
     @Override
