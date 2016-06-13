@@ -41,7 +41,7 @@ public class GoodsAdapter extends DataAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.goods_item, parent);
+            convertView = mInflater.inflate(R.layout.goods_item, null);
             holder = new ViewHolder();
             holder.id = (TextView) convertView.findViewById(R.id.Goods_id);
             holder.sj = (TextView) convertView.findViewById(R.id.Goods_sj);

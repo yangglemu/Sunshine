@@ -19,7 +19,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         //table sale_mx (rq, sj, sl, zq, je)
         db.execSQL("CREATE TABLE [sale_mx] (rq DATETIME PRIMARY KEY,sj INTEGER,sl INTEGER,zq REAL,je INTEGER)");
         //table sale_db (rq, sl, je, ss, zl)
-        db.execSQL("CREATE TABLE [sale_db] (rq DATETIME PRIMARY KEY,sl INTEGER,je INTEGER,ss INTEGER,zl INTEGER)");
+        db.execSQL("CREATE TABLE [sale_db] (rq DATETIME PRIMARY KEY,sl INTEGER,je INTEGER)");
         //table rk (rq, sj, sl)
         db.execSQL("CREATE TABLE [rk] (rq DATETIME PRIMARY KEY,sj INTEGER,sl INTEGER)");
         //table ck (rq, sj, sl)

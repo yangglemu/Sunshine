@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+import javax.mail.Quota;
+
 public class SaleDBAdapter extends DataAdapter {
     public SaleDBAdapter(Context context) {
         super(context);
@@ -19,7 +21,7 @@ public class SaleDBAdapter extends DataAdapter {
     protected void initData() {
         SQLiteHelper helper = new SQLiteHelper(mContext);
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select sl,je,rq from goods_db", null);
+        Cursor cursor = db.rawQuery("select sl,je,rq from sale_db", null);
         int index = 0;
         while (cursor.moveToNext()) {
             HashMap<String, String> map = new HashMap<>();
@@ -28,9 +30,11 @@ public class SaleDBAdapter extends DataAdapter {
             map.put("je", cursor.getInt(1) + ".00");
             map.put("rq", cursor.getString(2));
             mData.add(map);
+            mColors[0]= mContext.getResources().getColor(R.color.colorRow0);
+            mColors[1]=mContext.getResources().getColor(R.color.colorRow1);
         }
-        if(index==0){
-            Toast.makeText(mContext,"Table sale_db has no data",Toast.LENGTH_SHORT).show();
+        if (index == 0) {
+            Toast.makeText(mContext, "Table sale_db has no data", Toast.LENGTH_SHORT).show();
         }
         cursor.close();
         db.close();
@@ -40,7 +44,7 @@ public class SaleDBAdapter extends DataAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.saledb_item, parent);
+            convertView = mInflater.inflate(R.layout.saledb_item, null);
             assert convertView != null;
             holder = new ViewHolder();
             holder.id = (TextView) convertView.findViewById(R.id.SaleDb_id);
@@ -51,6 +55,7 @@ public class SaleDBAdapter extends DataAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+        convertView.setBackgroundColor(mColors[position % 2]);
         HashMap<String, String> map = mData.get(position);
         holder.id.setText(map.get("id"));
         holder.sl.setText(map.get("sl"));

@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         mainLayout = (LinearLayout) inflater.inflate(R.layout.main, null);
         setListLayout(R.layout.goods, R.id.listViewGoods, new GoodsAdapter(this));
         setContentView(mainLayout);
+
         Button titleButtonLeft = (Button) findViewById(R.id.titleButtonLeft);
         assert titleButtonLeft != null;
         titleButtonLeft.setOnClickListener(v->{
