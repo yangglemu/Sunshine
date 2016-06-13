@@ -9,35 +9,35 @@
     <TextView
         android:id="@+id/SaleDb_djh"
         style="@style/listRowStyle"
-        android:layout_weight="3" />
+        android:layout_weight="3.6" />
 
     <View style="@style/verLineRowStyle" />
 
     <TextView
         android:id="@+id/SaleDb_sl"
         style="@style/listRowStyle"
-        android:layout_weight="1" />
+        android:layout_weight="0.9" />
 
     <View style="@style/verLineRowStyle" />
 
     <TextView
         android:id="@+id/SaleDb_je"
         style="@style/listRowStyle"
-        android:layout_weight="1.5" />
+        android:layout_weight="1.4" />
 
     <View style="@style/verLineRowStyle" />
 
     <TextView
         android:id="@+id/SaleDb_ss"
         style="@style/listRowStyle"
-        android:layout_weight="1.5" />
+        android:layout_weight="1.4" />
 
     <View style="@style/verLineRowStyle" />
 
     <TextView
         android:id="@+id/SaleDb_zl"
         style="@style/listRowStyle"
-        android:layout_weight="1.5" />
+        android:layout_weight="1.2" />
 
     <View style="@style/verLineRowStyle" />
 

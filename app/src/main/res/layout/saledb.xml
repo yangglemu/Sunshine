@@ -13,35 +13,35 @@
 
         <TextView
             style="@style/listHeaderStyle"
-            android:layout_weight="3"
+            android:layout_weight="3.6"
             android:text="单据号" />
 
         <View style="@style/verLineHeaderStyle" />
 
         <TextView
             style="@style/listHeaderStyle"
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:text="数量" />
 
         <View style="@style/verLineHeaderStyle" />
 
         <TextView
             style="@style/listHeaderStyle"
-            android:layout_weight="1.5"
+            android:layout_weight="1.4"
             android:text="金额" />
 
         <View style="@style/verLineHeaderStyle" />
 
         <TextView
             style="@style/listHeaderStyle"
-            android:layout_weight="1.5"
+            android:layout_weight="1.4"
             android:text="实收" />
 
         <View style="@style/verLineHeaderStyle" />
 
         <TextView
             style="@style/listHeaderStyle"
-            android:layout_weight="1.5"
+            android:layout_weight="1.2"
             android:text="找零" />
 
         <View style="@style/verLineHeaderStyle" />

@@ -18,8 +18,8 @@ public class SaleDBAdapter extends DataAdapter {
             HashMap<String, String> map = new HashMap<>();
             map.put("djh", "20160101122231019");
             map.put("sl", i + "");
-            map.put("je", i + ".00");
-            map.put("ss", i + ".00");
+            map.put("je", 297 + ".00");
+            map.put("ss", 191 + ".00");
             map.put("zl", (3 + i) + ".00");
             mData.add(map);
         }
