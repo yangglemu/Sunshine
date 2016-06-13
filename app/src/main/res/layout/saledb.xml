@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View style="@style/verLineHeaderStyle" />
+
+        <TextView
+            style="@style/listHeaderStyle"
+            android:layout_weight="3"
+            android:text="单据号" />
+
+        <View style="@style/verLineHeaderStyle" />
+
+        <TextView
+            style="@style/listHeaderStyle"
+            android:layout_weight="1"
+            android:text="数量" />
+
+        <View style="@style/verLineHeaderStyle" />
+
+        <TextView
+            style="@style/listHeaderStyle"
+            android:layout_weight="1.5"
+            android:text="金额" />
+
+        <View style="@style/verLineHeaderStyle" />
+
+        <TextView
+            style="@style/listHeaderStyle"
+            android:layout_weight="1.5"
+            android:text="实收" />
+
+        <View style="@style/verLineHeaderStyle" />
+
+        <TextView
+            style="@style/listHeaderStyle"
+            android:layout_weight="1.5"
+            android:text="找零" />
+
+        <View style="@style/verLineHeaderStyle" />
+    </LinearLayout>
+
+    <View style="@style/horLineStyle" />
+
+    <ListView
+        android:id="@+id/listViewSaleDb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/colorLine"
+        android:dividerHeight="@dimen/lineHeight"
+        android:listSelector="@color/colorListSelected" />
+
+    <View style="@style/horLineStyle" />
+</LinearLayout>

@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="verLineRowStyle">
+        <item name="android:layout_width">@dimen/lineWidth</item>
+        <item name="android:layout_height">@dimen/rowHeight</item>
+        <item name="android:background">@color/colorLine</item>
+    </style>
+
+    <style name="verLineHeaderStyle">
+        <item name="android:layout_width">@dimen/lineWidth</item>
+        <item name="android:layout_height">@dimen/headerHeight</item>
+        <item name="android:background">@color/colorLine</item>
+    </style>
+
+    <style name="horLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/lineHeight</item>
+        <item name="android:background">@color/colorLine</item>
+    </style>
+
+    <style name="listHeaderStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/headerHeight</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="listRowStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/rowHeight</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

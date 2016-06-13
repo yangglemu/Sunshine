@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorRow1">#BBBBBB</color>
+    <color name="colorRow2">#DDDDDD</color>
+    <color name="colorLine">#888888</color>
+    <color name="colorTitleBackground">#777777</color>
+    <color name="colorTitleTextColor">#EEEEEE</color>
+    <color name="colorListSelected">#FFFF00</color>
+</resources>
