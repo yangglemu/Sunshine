@@ -19,30 +19,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         inflater = LayoutInflater.from(this);
         mainLayout = (LinearLayout) inflater.inflate(R.layout.main, null);
-        setListLayoutAdatper(R.layout.goods, R.id.listViewGoods, new GoodsAdapter(this));
+        setListLayout(R.layout.goods, R.id.listViewGoods, new GoodsAdapter(this));
         setContentView(mainLayout);
         Button titleButtonLeft = (Button) findViewById(R.id.titleButtonLeft);
         assert titleButtonLeft != null;
-        titleButtonLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (lv.getId() == R.id.listViewGoods) {
-                    setListLayoutAdatper(R.layout.saledb, R.id.listViewSaleDb, new SaleDBAdapter(MainActivity.this));
-                } else {
-                    setListLayoutAdatper(R.layout.goods, R.id.listViewGoods, new GoodsAdapter(MainActivity.this));
-                }
+        titleButtonLeft.setOnClickListener(v->{
+            if (lv.getId() == R.id.listViewGoods) {
+                setListLayout(R.layout.saledb, R.id.listViewSaleDb, new SaleDBAdapter(this));
+            } else {
+                setListLayout(R.layout.goods, R.id.listViewGoods, new GoodsAdapter(this));
             }
         });
         Button titleButtonRight = (Button) findViewById(R.id.titleButtonRight);
-        titleButtonRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        assert titleButtonRight != null;
+        titleButtonRight.setOnClickListener(v->finish());
     }
 
-    protected void setListLayoutAdatper(int layoutId, int listViewId, DataAdapter adapter) {
+    protected void setListLayout(int layoutId, int listViewId, DataAdapter adapter) {
         if (listViewLayout != null)
             mainLayout.removeView(listViewLayout);
         listViewLayout = inflater.inflate(layoutId, null);
