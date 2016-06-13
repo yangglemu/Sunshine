@@ -17,10 +17,10 @@ public class GoodsAdapter extends DataAdapter {
     protected void initData() {
         for (int i = 1; i < 39; i++) {
             HashMap<String, String> map = new HashMap<>();
-            map.put("tm", "010102019");
-            map.put("pm", "男款衬衣短袖");
-            map.put("sj", "19.00");
-            map.put("kc", "33");
+            map.put("id", i + "");
+            map.put("sj", (i + 10) + ".00");
+            map.put("sl", "9");
+            map.put("zq", 1 + ".00");
             mData.add(map);
         }
     }
@@ -29,25 +29,25 @@ public class GoodsAdapter extends DataAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.goods_item, null);
+            convertView = mInflater.inflate(R.layout.goods_item, parent);
             holder = new ViewHolder();
-            holder.tm = (TextView) convertView.findViewById(R.id.Goods_tm);
-            holder.pm = (TextView) convertView.findViewById(R.id.Goods_pm);
+            holder.id = (TextView) convertView.findViewById(R.id.Goods_id);
             holder.sj = (TextView) convertView.findViewById(R.id.Goods_sj);
-            holder.kc = (TextView) convertView.findViewById(R.id.Goods_kc);
+            holder.sl = (TextView) convertView.findViewById(R.id.Goods_sl);
+            holder.zq = (TextView) convertView.findViewById(R.id.Goods_zq);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
         Map<String, String> map = mData.get(position);
-        holder.tm.setText(map.get("tm"));
-        holder.pm.setText(map.get("pm"));
+        holder.id.setText(map.get("id"));
         holder.sj.setText(map.get("sj"));
-        holder.kc.setText(map.get("kc"));
+        holder.sl.setText(map.get("sl"));
+        holder.zq.setText(map.get("zq"));
         return convertView;
     }
 
     private static class ViewHolder {
-        TextView tm, pm, sj, kc;
+        TextView id,sj,sl,zq;
     }
 }

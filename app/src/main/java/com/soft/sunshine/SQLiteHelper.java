@@ -14,12 +14,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //table goods (tm, pm, sj, kc)
-        db.execSQL("CREATE TABLE [goods] (tm TEXT PRIMARY KEY,pm TEXT,sj INTEGER,kc INTEGER)");
-        //table sale_mx (djh, tm, sj, zq, je)
-        db.execSQL("CREATE TABLE [sale_mx] (djh TEXT,tm TEXT,sj INTEGER,zq REAL,je INTEGER)");
-        //table sale_db (djh, sl, je, ss, zl, rq)
-        db.execSQL("CREATE TABLE [sale_db] (djh TEXT PRIMARY KEY,sl INTEGER,je INTEGER,ss INTEGER,zl INTEGER,rq DATETIME)");
+        //table goods (sj, sl, zq)
+        db.execSQL("CREATE TABLE [goods] (sj INTEGER PRIMARY KEY,sl INTEGER,zq REAL)");
+        //table sale_mx (rq, sj, sl, zq, je)
+        db.execSQL("CREATE TABLE [sale_mx] (rq DATETIME PRIMARY KEY,sj INTEGER,sl INTEGER,zq REAL,je INTEGER)");
+        //table sale_db (rq, sl, je, ss, zl)
+        db.execSQL("CREATE TABLE [sale_db] (rq DATETIME PRIMARY KEY,sl INTEGER,je INTEGER,ss INTEGER,zl INTEGER)");
+        //table rk (rq, sj, sl)
+        db.execSQL("CREATE TABLE [rk] (rq DATETIME PRIMARY KEY,sj INTEGER,sl INTEGER)");
+        //table ck (rq, sj, sl)
+        db.execSQL("CREATE TABLE [ck] (rq DATETIME PRIMARY KEY,sj INTEGER,sl INTEGER)");
     }
 
     @Override

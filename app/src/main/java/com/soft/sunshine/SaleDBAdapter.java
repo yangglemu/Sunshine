@@ -16,11 +16,10 @@ public class SaleDBAdapter extends DataAdapter {
     protected void initData() {
         for (int i = 1; i < 30; i++) {
             HashMap<String, String> map = new HashMap<>();
-            map.put("djh", "20160101122231019");
+            map.put("id",i+"");
             map.put("sl", i + "");
             map.put("je", 297 + ".00");
-            map.put("ss", 191 + ".00");
-            map.put("zl", (3 + i) + ".00");
+            map.put("rq", "2016-01-01 12:22:39");
             mData.add(map);
         }
     }
@@ -29,28 +28,26 @@ public class SaleDBAdapter extends DataAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.saledb_item, null);
+            convertView = mInflater.inflate(R.layout.saledb_item, parent);
             assert convertView != null;
             holder = new ViewHolder();
-            holder.djh = (TextView) convertView.findViewById(R.id.SaleDb_djh);
+            holder.id = (TextView) convertView.findViewById(R.id.SaleDb_id);
             holder.sl = (TextView) convertView.findViewById(R.id.SaleDb_sl);
             holder.je = (TextView) convertView.findViewById(R.id.SaleDb_je);
-            holder.ss = (TextView) convertView.findViewById(R.id.SaleDb_ss);
-            holder.zl = (TextView) convertView.findViewById(R.id.SaleDb_zl);
+            holder.rq = (TextView) convertView.findViewById(R.id.SaleDb_rq);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
         HashMap<String, String> map = mData.get(position);
-        holder.djh.setText(map.get("djh"));
+        holder.id.setText(map.get("id"));
         holder.sl.setText(map.get("sl"));
         holder.je.setText(map.get("je"));
-        holder.ss.setText(map.get("ss"));
-        holder.zl.setText(map.get("zl"));
+        holder.rq.setText(map.get("rq"));
         return convertView;
     }
 
     private static class ViewHolder {
-        TextView djh, sl, je, ss, zl;
+        TextView id,sl,je,rq;
     }
 }
